@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<script>
+			function openApp() {
+				var userAgent = navigator.userAgent.toLowerCase();
+				if (userAgent.indexOf("iphone") > -1 || userAgent.indexOf("ipad") > -1) {
+					window.location.href = "myapp://";
+				} else if (userAgent.indexOf("android") > -1) {
+					window.location.href = "intent://#Intent;scheme=myapp;package=com.myapp;end";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="openApp()">点击打开我的App</button>
+	</body>
+</html>
